@@ -11,17 +11,19 @@
       box-sizing: border-box;
     }
     
-    html, body {
+    html {
       width: 100%;
-      height: auto;
-      min-height: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     body {
+      width: 100%;
+      height: 3390px;
       font-family: 'Source Han Sans CN', 'Noto Sans SC', sans-serif;
-      overflow-x: hidden;
+      overflow: hidden;
       background: linear-gradient(253deg, rgba(58, 206, 255, 0.05) -0.89%, rgba(200, 255, 240, 0.00) 99.39%), #FAFEFF;
-      transform-origin: top center;
     }
 
     @keyframes float {
@@ -1726,8 +1728,7 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      padding: 0 100px;
-      overflow: hidden;
+      overflow: visible;
     }
 
     .content4 {
@@ -1839,8 +1840,8 @@
       align-items: center;
       justify-content: flex-end;
       min-height: 0;
-      padding: 52px 0;
       position: relative;
+      padding: 100px 0px 0px 0px;
       width: 100%;
     }
 
