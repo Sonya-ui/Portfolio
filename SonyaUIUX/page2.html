@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonya - UX&UI Designer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Source Han Sans CN', 'Noto Sans SC', sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(262.289deg, rgba(58, 206, 255, 0.043) 0.89424%, rgba(200, 255, 240, 0) 99.395%),
+                  linear-gradient(90deg, rgb(250, 254, 255) 0%, rgb(250, 254, 255) 100%);
+    }
+
+    .content {
+      display: flex;
+      gap: 42px;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 100px;
+      position: relative;
+      width: 100%;
+      max-width: 1440px;
+    }
+
+    .huanrao {
+      position: absolute;
+      height: 315.741px;
+      width: 393.994px;
+      left: -109px;
+      top: -162.6px;
+      transform: rotate(-20.8deg);
+    }
+
+    .huanrao img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .left-card {
+      position: relative;
+      width: 403.2px;
+      height: 706.8px;
+      padding-bottom: 51px;
+      padding-left: 50px;
+      padding-right: 27px;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .card-bg-layer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card-bg-1 {
+      position: absolute;
+      width: 361.2px;
+      height: 658.8px;
+      left: 42px;
+      top: 48px;
+      background: rgba(255, 255, 255, 0.8);
+      filter: blur(3px);
+      border: 3px solid rgba(0, 0, 0, 0.2);
+      border-radius: 30px;
+      opacity: 0.2;
+    }
+
+    .card-bg-2 {
+      position: absolute;
+      width: 361.2px;
+      height: 658.8px;
+      left: 0;
+      top: 0;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(2.4px);
+      border: 1.8px solid white;
+      border-radius: 30px;
+      box-shadow: 0px 0px 24px 0px rgba(89, 61, 237, 0.09);
+    }
+
+    .profile-section {
+      position: relative;
+      width: 276.8px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .profile-photo {
+      width: 258px;
+      height: 315.6px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .name-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .name {
+      font-size: 30px;
+      color: #666;
+      letter-spacing: 1.8px;
+      word-break: break-word;
+    }
+
+    .name-sub {
+      display: flex;
+      align-items: center;
+      gap: 7.2px;
+      font-size: 18px;
+      color: rgba(153, 153, 153, 0.4);
+      margin-top: 5px;
+    }
+
+    .divider {
+      width: 1.2px;
+      height: 15.6px;
+      background: rgba(153, 153, 153, 0.4);
+    }
+
+    .contact-block {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      font-size: 19.2px;
+      white-space: nowrap;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 4.8px;
+      align-items: center;
+    }
+
+    .contact-label {
+      color: #999;
+    }
+
+    .contact-value {
+      color: #666;
+    }
+
+    .infj-badge {
+      position: absolute;
+      width: 90px;
+      height: 59.5px;
+      left: 223px;
+      top: 255.8px;
+    }
+
+    .infj-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .right-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 19px;
+      min-width: 0;
+    }
+
+    .about-title {
+      width: 251.892px;
+      height: 39.18px;
+    }
+
+    .about-title img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .bio-section {
+      display: flex;
+      flex-direction: column;
+      gap: 21px;
+    }
+
+    .bio-text {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #666;
+      text-align: justify;
+      word-break: break-word;
+    }
+
+    .timeline-section {
+      display: flex;
+      gap: 19.2px;
+      position: relative;
+    }
+
+    .timeline-line {
+      width: 12px;
+      height: 385px;
+      padding-top: 11px;
+      flex-shrink: 0;
+    }
+
+    .timeline-line img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .timeline-items {
+      display: flex;
+      flex-direction: column;
+      gap: 19.2px;
+      width: 417.4px;
+    }
+
+    .timeline-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4px;
+    }
+
+    .timeline-header {
+      display: flex;
+      gap: 9.6px;
+      align-items: center;
+    }
+
+    .company-name {
+      font-size: 21.6px;
+      color: #666;
+      white-space: nowrap;
+    }
+
+    .role-tag {
+      background: #e6eaeb;
+      padding: 0 14.4px;
+      border-radius: 60px;
+      font-size: 16.8px;
+      color: #666;
+      white-space: nowrap;
+    }
+
+    .timeline-date {
+      font-size: 19.2px;
+      color: #666;
+      opacity: 0.5;
+      white-space: nowrap;
+    }
+
+    .relitu {
+      position: absolute;
+      width: 374.5px;
+      height: 295.5px;
+      right: -30.5px;
+      bottom: 39.1px;
+    }
+
+    .relitu img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .bg-circle {
+      position: absolute;
+      width: 1264.2px;
+      height: 619.8px;
+      right: -913.2px;
+      top: 361px;
+    }
+
+    .bg-circle img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <!-- Huanrao decoration -->
+      <div class="huanrao">
+        <img src="image/huanrao.png" alt="">
+      </div>
+
+      <!-- Left card -->
+      <div class="left-card">
+        <div class="card-bg-layer">
+          <div class="card-bg-1"></div>
+          <div class="card-bg-2"></div>
+        </div>
+        <div class="profile-section">
+          <div class="profile-photo">
+            <img src="image/phpto.png" alt="">
+          </div>
+          <div class="name-block">
+            <div class="name">刘思宇</div>
+            <div class="name-sub">
+              <span>Sonya</span>
+              <div class="divider"></div>
+              <span>内向与外向并存</span>
+            </div>
+          </div>
+          <div class="contact-block">
+            <div class="contact-row">
+              <span class="contact-label">职位：</span>
+              <span class="contact-value">UX & UI 设计师</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-label">工作经验：</span>
+              <span class="contact-value">8年</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-label">电话：</span>
+              <span class="contact-value">13841299771（同微信）</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-label">邮箱：</span>
+              <span class="contact-value">sonya9771@163.com</span>
+            </div>
+          </div>
+          <div class="infj-badge">
+            <img src="image/INFJ 1.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <!-- Right content -->
+      <div class="right-content">
+        <div class="about-title">
+          <img src="image/aboutme.svg" alt="">
+        </div>
+        <div class="bio-section">
+          <p class="bio-text">
+            毕业于天津工业大学—软件工程专业，8 年互联网设计经验，可独立完成项目全链路视觉设计，擅长框架布局规划，精准把控产品视觉风格与色彩体系。过硬的工作协同能力，软件工程背景熟悉开发逻辑与技术边界，兼顾体验与落地，规范输出文档，高效对接研发推进上线；学习适应力强，前期主攻 ToC 移动端方向，后期顺利转型并深耕 B 端复杂业务，快速搭建知识体系适配各类场景设计；具备强逻辑与全局思维，擅长梳理复杂流程、覆盖边界场景，交互严谨规范；兼具产品与商业思维，紧跟行业趋势，以业务目标驱动体验设计；熟练运用 AI 赋能设计全流程，高效提效并优化细节与创意落地。
+          </p>
+          <div class="timeline-section">
+            <div class="timeline-line">
+              <img src="image/duandian.svg" alt="">
+            </div>
+            <div class="timeline-items">
+              <div class="timeline-item">
+                <div class="timeline-header">
+                  <span class="company-name">好未来教育</span>
+                  <span class="role-tag">UX 设计师</span>
+                </div>
+                <div class="timeline-date">2025.5.14 — 2026.3.31（驻场）</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-header">
+                  <span class="company-name">北京嘀嘀无限科技发展有限公司</span>
+                  <span class="role-tag">UX 设计师</span>
+                </div>
+                <div class="timeline-date">2022.5.17 — 2025.2.28（驻场）</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-header">
+                  <span class="company-name">百度（中国）有限公司</span>
+                  <span class="role-tag">UI 设计师</span>
+                </div>
+                <div class="timeline-date">2021.2.23 — 2022.4.15（驻场）</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-header">
+                  <span class="company-name">北京一维三渡设计咨询有限公司</span>
+                  <span class="role-tag">UI 设计师</span>
+                </div>
+                <div class="timeline-date">2020.9.22 — 2021.1.28</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-header">
+                  <span class="company-name">天津宇甄创优科技有限公司</span>
+                  <span class="role-tag">UI 设计师</span>
+                </div>
+                <div class="timeline-date">2018.5 — 2020.9</div>
+              </div>
+            </div>
+            <div class="relitu">
+              <img src="image/relitu.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Background circle -->
+      <div class="bg-circle">
+        <img src="image/Ellipse 9508.svg" alt="">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

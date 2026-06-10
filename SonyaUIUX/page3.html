@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonya - UX&UI Designer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Source Han Sans CN', 'Noto Sans SC', sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      background: linear-gradient(262.289deg, rgba(58, 206, 255, 0.043) 0.89424%, rgba(200, 255, 240, 0) 99.395%),
+                  linear-gradient(90deg, rgb(250, 254, 255) 0%, rgb(250, 254, 255) 100%);
+      padding: 0 100px;
+    }
+
+    .content {
+      display: flex;
+      gap: 10px;
+      height: 810px;
+      align-items: center;
+      justify-content: flex-end;
+      max-width: 1440px;
+      position: relative;
+      flex-shrink: 0;
+      width: 100%;
+    }
+
+    .hudie {
+      position: absolute;
+      left: 503px;
+      width: 114px;
+      height: 114px;
+      top: 27px;
+    }
+
+    .hudie img {
+      position: absolute;
+      inset: 0;
+      max-width: none;
+      object-fit: cover;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .flowermain2 {
+      position: absolute;
+      height: 751px;
+      left: 93px;
+      top: 65px;
+      width: 497px;
+    }
+
+    .flowermain2 img {
+      position: absolute;
+      inset: 0;
+      max-width: none;
+      object-fit: cover;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .right-content {
+      display: flex;
+      flex: 1 0 0;
+      flex-direction: column;
+      gap: 29px;
+      height: 100%;
+      align-items: flex-start;
+      justify-content: center;
+      min-width: 0;
+      padding-left: 710px;
+      position: relative;
+    }
+
+    .project-title {
+      height: 51.975px;
+      position: relative;
+      flex-shrink: 0;
+      width: 438.69px;
+    }
+
+    .project-title img {
+      position: absolute;
+      display: block;
+      inset: 0;
+      max-width: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .card {
+      backdrop-filter: blur(8.4px);
+      background: rgba(255, 255, 255, 0.16);
+      border: 1.5px solid white;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-start;
+      overflow: hidden;
+      padding: 21.6px 31.2px;
+      position: relative;
+      border-radius: 18px;
+      box-shadow: 0px 0px 7.8px 0px rgba(89, 61, 237, 0.1);
+      flex-shrink: 0;
+      width: 100%;
+    }
+
+    .card-logo {
+      position: absolute;
+      height: 59px;
+      right: 18.5px;
+      top: -1.25px;
+      width: 96px;
+    }
+
+    .card-logo img {
+      position: absolute;
+      inset: 0;
+      max-width: none;
+      object-fit: cover;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .card-logo-2 {
+      position: absolute;
+      right: -1.5px;
+      width: 136.8px;
+      height: 136.8px;
+      top: 55.5px;
+    }
+
+    .card-logo-2 img {
+      position: absolute;
+      display: block;
+      inset: 0;
+      max-width: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .card-decor {
+      position: absolute;
+      opacity: 0.1;
+    }
+
+    .card-decor-1 {
+      right: -43.5px;
+      width: 182.4px;
+      height: 182.4px;
+      top: 72.9px;
+    }
+
+    .card-decor-2 {
+      height: 136.2px;
+      opacity: 0.1;
+      right: -17.1px;
+      top: 46.9px;
+      width: 136.782px;
+    }
+
+    .card-decor img {
+      position: absolute;
+      inset: 0;
+      max-width: none;
+      object-fit: cover;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4px;
+      align-items: flex-start;
+      position: relative;
+      flex-shrink: 0;
+      width: 100%;
+    }
+
+    .card-title {
+      word-break: break-word;
+      font-family: 'Source Han Sans CN';
+      font-weight: 500;
+      line-height: normal;
+      font-style: normal;
+      position: relative;
+      flex-shrink: 0;
+      font-size: 25.2px;
+      letter-spacing: 1.512px;
+      width: 100%;
+    }
+
+    .card-subtitle {
+      display: flex;
+      align-items: center;
+      position: relative;
+      flex-shrink: 0;
+      width: 100%;
+    }
+
+    .card-subtitle p {
+      word-break: break-word;
+      flex: 1 0 0;
+      font-family: 'Source Han Sans CN';
+      line-height: normal;
+      min-width: 0;
+      font-style: normal;
+      opacity: 0.9;
+      position: relative;
+      color: #999;
+      font-size: 18px;
+      text-align: justify;
+    }
+
+    .card-desc {
+      display: flex;
+      align-items: center;
+      position: relative;
+      flex-shrink: 0;
+      width: 100%;
+    }
+
+    .card-desc p {
+      word-break: break-word;
+      flex: 1 0 0;
+      font-family: 'Source Han Sans CN';
+      line-height: normal;
+      min-width: 0;
+      font-style: normal;
+      opacity: 0.9;
+      position: relative;
+      color: #666;
+      font-size: 14.4px;
+      text-align: justify;
+    }
+
+    .card-accent {
+      position: absolute;
+      height: 31.2px;
+      left: -1.5px;
+      border-bottom-right-radius: 60px;
+      border-top-right-radius: 60px;
+      top: 23.7px;
+      width: 6px;
+    }
+
+    .card-list {
+      word-break: break-word;
+      display: flex;
+      font-family: 'Source Han Sans CN';
+      gap: 19.2px;
+      align-items: center;
+      line-height: 0;
+      font-style: normal;
+      position: relative;
+      flex-shrink: 0;
+      color: #666;
+      font-size: 14.4px;
+      text-align: justify;
+      width: 100%;
+      white-space: nowrap;
+    }
+
+    .card-list ul {
+      display: block;
+      opacity: 0.9;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .card-list li {
+      list-style: disc;
+      margin-left: 21.6px;
+    }
+
+    .card-list li span {
+      line-height: normal;
+    }
+
+    /* Card 1 - Purple */
+    .card-purple .card-title {
+      color: #7353f7;
+    }
+
+    .card-purple .card-accent {
+      background: #7353f7;
+    }
+
+    /* Card 2 - Dark Blue */
+    .card-blue .card-title {
+      color: #09225d;
+      white-space: nowrap;
+    }
+
+    .card-blue .card-accent {
+      background: #09225d;
+    }
+
+    .card-blue .card-logo {
+      height: 59.5px;
+    }
+
+    /* Card 3 - Green */
+    .card-green .card-title {
+      color: #00ac61;
+      width: 201.6px;
+    }
+
+    .card-green .card-accent {
+      background: #00ac61;
+    }
+
+    .card-green .card-logo {
+      height: 61.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="hudie">
+        <img src="http://localhost:3845/assets/e38ca6286dc0df15889f27e18e46542a1dfdd68f.png" alt="">
+      </div>
+      <div class="flowermain2">
+        <img src="http://localhost:3845/assets/d6ba34dc073229dccb5ce0cf74f5c2ce48b908f9.png" alt="">
+      </div>
+      <div class="right-content">
+        <div class="project-title">
+          <img src="http://localhost:3845/assets/1676b8dfa04d3fa834a66798c9d8440da0ca4fcc.svg" alt="">
+        </div>
+        <div class="card card-purple">
+          <div class="card-logo">
+            <img src="http://localhost:3845/assets/e3d7d32ef7b6eefa68941162f079bc8e1e4e35d8.png" alt="">
+          </div>
+          <div class="card-decor card-decor-1">
+            <img src="http://localhost:3845/assets/0cc4fcb09242c766befbf44084a68f0a23b7ecf7.png" alt="">
+          </div>
+          <div class="card-content">
+            <p class="card-title">超级内容</p>
+            <div class="card-subtitle">
+              <p>好未来项目</p>
+            </div>
+            <div class="card-desc">
+              <p>超级内容平台是面向好未来内部教研及设计老师打造的一站式智能课设平台。平台整合全业务链路，支持线上课件与随堂教材创作、内容发布上线、教学质量数据分析、课件持续优化迭代，实现课设全流程闭环，部分制作流程融入ai，助力教研、设计老师集中办公、简化操作、提升备课教研整体效率。</p>
+            </div>
+          </div>
+          <div class="card-accent"></div>
+        </div>
+        <div class="card card-blue">
+          <div class="card-logo">
+            <img src="http://localhost:3845/assets/1e2f3fd48ae4d915b269a54974fbbaef1ed7986b.png" alt="">
+          </div>
+          <div class="card-logo-2">
+            <img src="http://localhost:3845/assets/c31e37dee2e6dcb2e6971c6275904e3389c0ed4a.svg" alt="">
+          </div>
+          <div class="card-content">
+            <p class="card-title">广州花都政府智慧交通大屏</p>
+            <div class="card-subtitle">
+              <p>嘀嘀项目</p>
+            </div>
+            <div class="card-desc">
+              <p>22年广州花都政府招标项目，为提升城市交通管理水平，实现交通信息的可视化、实时化与智能化。打造一个高效精准的交通信息展示大屏。</p>
+            </div>
+          </div>
+          <div class="card-accent"></div>
+        </div>
+        <div class="card card-green">
+          <div class="card-decor card-decor-2">
+            <img src="http://localhost:3845/assets/29b4a67b834d2e65dc4d1b30fa85d289c0aeb58d.png" alt="">
+          </div>
+          <div class="card-logo">
+            <img src="http://localhost:3845/assets/001e5afeef33700426858d8e4c4c969b82870d81.png" alt="">
+          </div>
+          <div class="card-content">
+            <p class="card-title">其他</p>
+            <div class="card-subtitle">
+              <p>other</p>
+            </div>
+            <div class="card-list">
+              <ul>
+                <li>
+                  <span>嗨目影院 （app）</span>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <span>Hi！喵 （app）</span>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <span>其他设计（ppt、视频、H5）</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-accent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
